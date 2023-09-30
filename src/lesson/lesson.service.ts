@@ -20,4 +20,8 @@ export class LessonService {
 
         return this.repo.save(lesson);
     }
+
+    async getLesson(id: string): Promise<Lesson>{
+        return this.repo.findOneBy({ id })
+    }
 }
