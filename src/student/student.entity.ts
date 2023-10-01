@@ -13,5 +13,5 @@ export class Student{
     firstName: string;
 
     @Column()
-    lastName: string
+    lastName: string;
 }
