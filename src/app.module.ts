@@ -4,6 +4,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo'
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Lesson } from './lesson/lessom.entity';
+import { StudentModule } from './student/student.module';
 
 @Module({
   imports: [
@@ -18,7 +19,8 @@ import { Lesson } from './lesson/lessom.entity';
       driver: ApolloDriver,
       autoSchemaFile: true
     }),
-    LessonModule
+    LessonModule,
+    StudentModule
   ],
 })
 export class AppModule {}
