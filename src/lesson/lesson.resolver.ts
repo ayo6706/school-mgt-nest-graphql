@@ -14,6 +14,11 @@ export class LessonResolver{
         return this.service.getLesson(id)
     }
 
+    @Query(returns =>[LessonType])
+    lessons(){
+        return this.service.getLessons()
+    }
+
     @Mutation(returns => LessonType )
     createLesson(
         @Args('createLessonInput') createLessonInput: CreateLessonInput,
