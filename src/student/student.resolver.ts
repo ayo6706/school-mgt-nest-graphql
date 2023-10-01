@@ -20,4 +20,11 @@ export class StudentResolver{
     students(){
         return this.service.students();
     }
+
+    @Query(returns => StudentType)
+    student(
+        @Args('id') id: string
+    ){
+        return this.service.student(id)
+    }
 }
