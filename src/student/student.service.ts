@@ -36,9 +36,11 @@ export class StudentService {
     async getManyStudents(studentIDs: string[]): Promise<Student[]>{
         return await this.repo.find({
             where: {
-                id: In(studentIDs),
+                id: {
+                    $in: studentIDs
+                } as any,
             },
-          });
+          }) ;
 
     }
 }
