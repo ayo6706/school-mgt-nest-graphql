@@ -28,4 +28,8 @@ export class StudentService {
     async students(): Promise<Student[]>{
         return this.repo.find();
     }
+
+    async student(id: string): Promise<Student>{
+        return this.repo.findOneBy({id})
+    }
 }
