@@ -24,4 +24,8 @@ export class StudentService {
 
         return this.repo.save(student);
     }
+
+    async students(): Promise<Student[]>{
+        return this.repo.find();
+    }
 }
