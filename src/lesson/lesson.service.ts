@@ -30,4 +30,15 @@ export class LessonService {
     async getLessons(): Promise<Lesson[]>{
         return this.repo.find();
     }
+
+    async assignStudentsToLesson(lessonID: string, studentIDS: string[]): Promise<Lesson>{
+        const lesson = await this.repo.findOneBy({
+            id:lessonID
+        });
+
+        lesson.students= [...lesson.students, ...studentIDS];
+
+        return this.repo.save(lesson)
+
+    }
 }
