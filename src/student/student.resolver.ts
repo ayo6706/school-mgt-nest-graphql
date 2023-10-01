@@ -5,9 +5,7 @@ import { CreateStudentInput } from "./create-student.input";
 
 @Resolver(of => StudentType)
 export class StudentResolver{
-    constructor(private service: StudentService){
-
-    }
+    constructor(private service: StudentService){}
 
     @Mutation(returns => StudentType)
     createStudent(
@@ -16,7 +14,7 @@ export class StudentResolver{
         return this.service.createStudent(createStudentInput);
     }
 
-    @Query(returns =>[StudentType])
+    @Query(returns => [StudentType])
     students(){
         return this.service.students();
     }
